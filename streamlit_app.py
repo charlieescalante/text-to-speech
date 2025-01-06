@@ -13,10 +13,10 @@ if st.button("Generate my speech"):
   if text_inmput:
     tts = gTTS(text_input, lang=language)
 
-audio_stream = BytesIO()
+    audio_stream = BytesIO()
 
-tts.write_to_fp(audio_stream)
+    tts.write_to_fp(audio_stream)
 
-st.audio(audio_stream)
-else:
-  st.warning("Please enter some text.")
+    st.audio(audio_stream)
+  else:
+    st.warning("Please enter some text.")
