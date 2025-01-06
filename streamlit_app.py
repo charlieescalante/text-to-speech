@@ -10,7 +10,7 @@ text_input = st.text_area("Enter text to convert to speech")
 language = st.selectbox("Select language",["en","fr","ru","hi","es"])
 
 if st.button("Generate my speech"):
-  if text_inmput:
+  if text_input:
     tts = gTTS(text_input, lang=language)
 
     audio_stream = BytesIO()
