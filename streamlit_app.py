@@ -5,7 +5,18 @@ from io import BytesIO
 
 st.title("Simple Text to Speech Converter")
 
-text_input = st.text_area("Enter text to convert to speech")
+text_input = st.text_area("Enter text to convert to speech", height=150)
+
+st.sidebar.title("Upload your file")
+uploaded_file=st.sidebar.file_uploader("Choose a .txt file", type"txt")
+
+if uploaded_file is not None:
+  file_text = uploaded_file.read().decode("utf-8")
+
+st.subheader("text from Uploaded file")
+st.text(file_text)
+
+text_input += "\n\n" + file_text
 
 language = st.selectbox("Select language",["en","fr","ru","hi","es"])
 
@@ -19,4 +30,4 @@ if st.button("Generate my speech"):
 
     st.audio(audio_stream)
   else:
-    st.warning("Please enter some text.")
+    st.warning("Please enter some text or upload from device.")
