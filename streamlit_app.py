@@ -13,10 +13,10 @@ uploaded_file=st.sidebar.file_uploader("Choose a .txt file", type="txt")
 if uploaded_file is not None:
   file_text = uploaded_file.read().decode("utf-8")
 
-st.subheader("text from Uploaded file")
-st.text(file_text)
+  st.subheader("text from Uploaded file")
+  st.text(file_text)
 
-text_input += "\n\n" + file_text
+  text_input += "\n\n" + file_text
 
 language = st.selectbox("Select language",["en","fr","ru","hi","es"])
 
